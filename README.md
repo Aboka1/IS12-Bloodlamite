@@ -4,7 +4,9 @@
 
 **Main source code:** https://github.com/Project-IS12/IS12-Warfare
 
-**Discord:**  https://discord.gg/FVRctMD
+**IS12 Discord:**  https://discord.gg/FVRctMD
+
+**OUR Discord**  https://discord.gg/fycqYQJMPB
 
 ## Terms of service
 
