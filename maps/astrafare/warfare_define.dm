@@ -1,16 +1,16 @@
 
 /datum/map/warfare
-	name = "Warfare"
-	full_name = "Warfare"
-	path = "warfare"
-	station_name  = "Warfare"
-	station_short = "Warfare"
-	dock_name     = "Warfare"
-	boss_name     = "Colonial Magistrate Authority"
-	boss_short    = "CMA"
-	company_name  = "Colonial Magistrate Space Residential Complex"
-	company_short = "CMSRC"
-	system_name = "hell"
+	name = "Rotten Field"
+	full_name = "Rotten Field"
+	path = "rotten field"
+	station_name  = "Rotten Field"
+	station_short = "RF"
+	dock_name     = "Rotten Field"
+	boss_name     = "Blakvasha Okca"
+	boss_short    = "BO"
+	company_name  = "Imprisonment"
+	company_short = "Imprisonment"
+	system_name = "curse"
 
 	lobby_icon = 'maps/astrafare/fullscreen.dmi'
 	lobby_screens = list("lobby1")
@@ -29,7 +29,7 @@
 	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
 	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
-	map_lore = "We have been marching through the mountain ravine for more than two seasons. Never ending, tight and dangerous. No one can remember what our target was anymore - something important. Something that could end the War. Yesterday we captured old complex of unknown origin. Recon returned with confirmed enemy presence. We have orders to move out at dawn."
+	map_lore = "It looks like we MUST fight. But why?"
 
 
 

@@ -713,7 +713,6 @@ meteor_act
 			apply_effect(10, PARALYZE)
 			return
 
-
 //Add screaming here.
 /mob/living/carbon/human/IgniteMob()
 	..()

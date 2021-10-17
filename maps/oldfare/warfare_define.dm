@@ -1,16 +1,16 @@
 
 /datum/map/warfare
-	name = "Warfare"
-	full_name = "Warfare"
-	path = "warfare"
-	station_name  = "Warfare"
-	station_short = "Warfare"
-	dock_name     = "Warfare"
-	boss_name     = "Colonial Magistrate Authority"
-	boss_short    = "CMA"
-	company_name  = "Colonial Magistrate Space Residential Complex"
-	company_short = "CMSRC"
-	system_name = "hell"
+	name = "Rotten Field"
+	full_name = "Rotten Field"
+	path = "rotten field"
+	station_name  = "Rotten Field"
+	station_short = "RF"
+	dock_name     = "Rotten Field"
+	boss_name     = "Blakvasha Okca"
+	boss_short    = "BO"
+	company_name  = "Imprisonment"
+	company_short = "Imprisonment"
+	system_name = "curse"
 
 	lobby_icon = 'maps/oldfare/fullscreen.dmi'
 	lobby_screens = list("lobby1","lobby2","lobby3","lobby4","lobby5", "lobby6")
@@ -29,7 +29,7 @@
 	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
 	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
-	map_lore = "We've been sitting in these trenches for months. No word from central command. The shells keep dropping... there is no way out. Our only hope is to push forth into their trench instead. But we don't have that many men left, if we lose too many it's over for us. We must give it our all if we are to survive this winter."
+	map_lore = "It looks like we MUST fight. But why?"
 
 
 

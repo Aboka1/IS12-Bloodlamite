@@ -150,7 +150,7 @@
 	timeout = 1800
 
 /datum/happiness_event/pain
-	description = "<span class='danger'>IT HURTS SO MUCH!</span>\n"
+	description = "<span class='danger'>PAIN! HOW MUCH PAIN!</span>\n"
 	happiness = -10
 	timeout = 1800
 
@@ -167,12 +167,12 @@
 	timeout = 5 MINUTES
 
 /datum/happiness_event/captain_death
-	description = "<span class='danger'>My captain is dead!</span>\n"
+	description = "<span class='danger'>My... Captain...</span>\n"
 	happiness = -12
 	timeout = 2 MINUTES
 
 /datum/happiness_event/morale_boost
-	description = "<span class='binfo'>OORAH! TODAY WE FIGHT LIKE MEN!</span>\n"
+	description = "<span class='binfo'>I need to fight like a Wormacht! I am beast.</span>\n"
 	happiness = 12
 	timeout = 1800
 

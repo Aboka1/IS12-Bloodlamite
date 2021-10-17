@@ -1,5 +1,5 @@
 /datum/job/soldier/red_soldier
-	title = "Red Soldier"
+	title = "Red Weak Bum"
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/soldier
 	is_red_team = TRUE
 	selection_color = "#b27676"
@@ -14,18 +14,18 @@
 	equip(var/mob/living/carbon/human/H)
 		H.warfare_faction = RED_TEAM
 		..()
-		H.add_stats(rand(12,17), rand(10,16), rand(8,12))
+		H.add_stats(rand(11,12), rand(10,11), rand(10,11))
 		SSwarfare.red.team += H
 		if(can_be_in_squad)
 			H.assign_random_squad(RED_TEAM)
-		H.fully_replace_character_name("Pvt. [H.real_name]")
+		H.fully_replace_character_name("Weak [H.real_name]")
 		H.warfare_language_shit(LANGUAGE_RED)
 		H.assign_random_quirk()
 		if(announced)
-			H.say(";Soldier reporting for duty!")
+			H.say(";Weak Bum reporting for duty!")
 
 /datum/job/soldier/red_soldier/sgt
-	title = "Red Squad Leader"
+	title = "Red Main Bum"
 	total_positions = 3
 	social_class = SOCIAL_CLASS_MED
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sgt
@@ -42,12 +42,12 @@
 		..()
 		H.verbs += /mob/living/carbon/human/proc/morale_boost
 		H.assign_squad_leader(RED_TEAM)
-		H.fully_replace_character_name("Sgt. [current_name]")
+		H.fully_replace_character_name("Main [current_name]")
 		H.say(";[title] reporting for duty!")
 
 
 /datum/job/soldier/red_soldier/medic
-	title = "Red Medic"
+	title = "Red Healer Bum"
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/medic
 	can_be_in_squad = FALSE //We assign them to a squad seperately.
 
@@ -64,8 +64,8 @@
 		..()
 		H.assign_random_squad(RED_TEAM, "medic")
 		H.set_trait(new/datum/trait/death_tolerant())
-		H.fully_replace_character_name("Medic [current_name]")
-		H.say(";Medic reporting for duty!")
+		H.fully_replace_character_name("Healer [current_name]")
+		H.say(";Healer Bum reporting for duty!")
 
 
 /datum/job/soldier/red_soldier/engineer
@@ -88,7 +88,7 @@
 		H.say(";Engineer reporting for duty!")
 
 /datum/job/soldier/red_soldier/sniper
-	title = "Red Sniper"
+	title = "Red Jaeger Bum"
 	total_positions = 2
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sniper
 	auto_rifle_skill = 3
@@ -105,12 +105,12 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Sniper [current_name]")
-		H.say(";Sniper reporting for duty!")
+		H.fully_replace_character_name("Jaeger [current_name]")
+		H.say(";Jaeger Bum reporting for duty!")
 
 
 /datum/job/soldier/red_soldier/sentry
-	title = "Red Sentry"
+	title = "Red Heavy Bum"
 	total_positions = 1
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sentry
 	auto_rifle_skill = 5
@@ -127,9 +127,9 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Sentry [current_name]")
-		H.add_stats(18, rand(10,16), rand(15,18))
-		H.say(";Sentry reporting for duty!")
+		H.fully_replace_character_name("Heavy [current_name]")
+		H.add_stats(13, rand(10,13), rand(13,14))
+		H.say(";Heavy Bum reporting for duty!")
 
 /datum/job/soldier/red_soldier/flame_trooper
 	title = "Red Flame Trooper"
@@ -155,7 +155,7 @@
 		H.unlock_achievement(new/datum/achievement/flamer())
 
 /datum/job/soldier/red_soldier/captain
-	title = "Red Captain"
+	title = "Red King Bum"
 	total_positions = 1
 	req_admin_notify = TRUE
 	social_class = SOCIAL_CLASS_HIGH
@@ -169,7 +169,7 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Cpt. [current_name]")
+		H.fully_replace_character_name("King [current_name]")
 		H.get_idcard()?.access = get_all_accesses()
 		var/obj/O = H.get_equipped_item(slot_s_store)
 		if(O)

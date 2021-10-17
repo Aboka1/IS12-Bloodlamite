@@ -78,7 +78,7 @@
 	var/turf/starting			// the projectile's starting turf
 	var/list/permutated			// we've passed through these atoms, don't try to hit them again
 	var/penetrating = 0			//If greater than zero, the projectile will pass through dense objects as specified by on_penetrate()
-	var/penetration_modifier = 0.2 //How much internal damage this projectile can deal, as a multiplier.
+	var/penetration_modifier = 0.5 //How much internal damage this projectile can deal, as a multiplier.
 	var/forcedodge = FALSE		//to pass through everything
 	var/ignore_source_check = FALSE
 
@@ -136,7 +136,7 @@
 				var/mob/living/carbon/human/H = target
 				blood_color = H.species.blood_color
 			new /obj/effect/overlay/temp/dir_setting/bloodsplatter(get_turf(target), splatter_dir, blood_color)
-		//if(prob(50))
+		//if(prob(25))
 		var/obj/effect/decal/cleanable/blood/B = blood_splatter(target_loca, L, 1, splatter_dir)
 		B.icon_state = pick("dir_splatter_1","dir_splatter_2")
 		var/scale = min(1, round(damage / 50, 0.2))

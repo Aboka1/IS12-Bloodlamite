@@ -448,7 +448,7 @@
 
 /obj/item/melee/trench_axe
 	name = "trench axe"
-	desc = "Used mainly for murdering those on the enemy side."
+	desc = "Used mainly for murdering."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "trenchaxe"
 	item_state = "trenchaxe"
