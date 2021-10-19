@@ -690,3 +690,19 @@
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "stick0"
 	force = 10
+
+/obj/item/clothing/head/helmet/sch
+	name = "Steel Chapelle Helmet"
+	desc = "This piece of metal can save your life."
+	icon_state = "sch"
+	armor = list(melee = 45, bullet = 15, laser = 20, energy = 0, bomb = 15, bio = 0, rad = 0)
+
+
+/obj/item/clothing/suit/armor/sb
+	name = "Steel Breastplate"
+	desc = "Protects well, but it's some heavy."
+	icon_state = "sb"
+	armor = list(melee = 50, bullet = 20, laser = 20, energy = 0, bomb = 20, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	cold_protection = UPPER_TORSO|LOWER_TORSO
+	str_requirement = 14

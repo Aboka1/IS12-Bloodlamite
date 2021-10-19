@@ -224,13 +224,13 @@
 
 /decl/hierarchy/outfit/job/bluesoldier
 	name = OUTFIT_JOB_NAME("Blue Soldier")
-	head = /obj/item/clothing/head/helmet/bluehelmet
+	head = /obj/item/clothing/head/helmet/sch
 	uniform = /obj/item/clothing/under/blue_uniform
 	back = /obj/item/storage/backpack/satchel/warfare
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_ear = null
 	l_pocket = /obj/item/storage/box/ifak
-	suit = /obj/item/clothing/suit/armor/bluecoat
+	suit = /obj/item/clothing/suit/armor/sb
 	gloves = /obj/item/clothing/gloves/thick/swat/combat/warfare
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	pda_type = null
@@ -245,7 +245,7 @@
 		backpack_contents = initial(backpack_contents)
 		belt = null
 
-	else if (prob(5))
+/*	else if (prob(5))
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
@@ -273,7 +273,7 @@
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares/blue = 1)
 	if(aspect_chosen(/datum/aspect/trenchmas))
 		backpack_contents += list(/obj/item/gift/warfare = 1)
-	..()
+*/	..()
 
 
 /decl/hierarchy/outfit/job/bluesoldier/sgt

@@ -220,12 +220,12 @@
 
 /decl/hierarchy/outfit/job/redsoldier
 	name = OUTFIT_JOB_NAME("Red Soldier")
-	head = /obj/item/clothing/head/helmet/redhelmet
+	head = /obj/item/clothing/head/helmet/sch
 	uniform = /obj/item/clothing/under/red_uniform
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_ear = null // /obj/item/device/radio/headset/syndicate
 	l_pocket = /obj/item/storage/box/ifak // /obj/item/stack/medical/bruise_pack
-	suit = /obj/item/clothing/suit/armor/redcoat
+	suit = /obj/item/clothing/suit/armor/sb
 	gloves = /obj/item/clothing/gloves/thick/swat/combat/warfare
 	back = /obj/item/storage/backpack/satchel/warfare
 	neck = /obj/item/reagent_containers/food/drinks/canteen
@@ -242,7 +242,7 @@
 		backpack_contents = initial(backpack_contents)
 		belt = null
 
-	else if (prob(5))
+/*	else if (prob(5))
 		suit_store = /obj/item/gun/projectile/automatic/m22/warmonger/m14/battlerifle/rsc
 		r_pocket =  /obj/item/ammo_magazine/a762/rsc
 		backpack_contents = list(/obj/item/grenade/smokebomb = 1)
@@ -270,7 +270,7 @@
 		backpack_contents += list(/obj/item/torch/self_lit = 1, /obj/item/ammo_box/flares = 1)
 	if(aspect_chosen(/datum/aspect/trenchmas))
 		backpack_contents += list(/obj/item/gift/warfare = 1)
-	..()
+*/	..()
 
 /decl/hierarchy/outfit/job/redsoldier/sgt
 	suit_store = /obj/item/gun/projectile/automatic/m22/warmonger
