@@ -1,6 +1,6 @@
-/var/server_name = "Unofficial Interstation12"
+/var/server_name = "Bloodlamite"
 /var/game_id = null
-/var/list/warfare_taglines = list("WW1 Scifi Suffering Simulator", "Post Apoc WW1 Emulator", "WW1 But Terrible", "Pain, Suffering, and Flesh", "Your Heart Has Stopped", "Trench Pizza Simulator", "Warcrime Simulator")// list("It's Getting Cold Out There", "New Guns", "New Classes", "Cold", "Winter", "Frozen Solid", "Frozen Trench Pizza", "Warcrime Simulator", "Your Heart Has Stopped", )
+/var/list/warfare_taglines = list("Shattered Bones", "Unsharpened Swords", "Wet Mud")// list("It's Getting Cold Out There", "New Guns", "New Classes", "Cold", "Winter", "Frozen Solid", "Frozen Trench Pizza", "Warcrime Simulator", "Your Heart Has Stopped", )
 /var/warfare_tagline = null
 /hook/global_init/proc/generate_gameid()
 	if(game_id != null)

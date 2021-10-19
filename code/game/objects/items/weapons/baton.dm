@@ -36,12 +36,12 @@
 	return ..()
 */
 /obj/item/melee/classic_baton/trench_club
-	name = "trench club"
-	desc = "A truncheon for beating other people in the same trench as you."
+	name = "Iron Club"
+	desc = "Such a club can easily destroy a skull."
 	icon_state = "trench_club1"
 	item_state = "WU-club"
-	force = 25 //These things pack a punch.
-	block_chance = 25
+	force = 26
+	block_chance = 23
 
 /obj/item/melee/classic_baton/trench_club/New()
 	..()

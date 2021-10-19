@@ -2,7 +2,7 @@
 	name = "Boombox"
 	icon = 'icons/obj/boombox.dmi'
 	icon_state = "boombox"
-	desc = "A smuggled in boombox used with smuggled in cassette tapes to listen to smuggled in tunes."
+	desc = "Music - Great thing."
 	var/obj/item/device/cassette/casseta = null
 	var/datum/sound_token/sound_token
 	var/playing = 0
@@ -91,8 +91,8 @@
 	playing = 1
 
 /obj/item/device/cassette
-	name = "cassette tape"
-	desc = "A tape smuggled in from somewhere in the outside world. Contains some bumping tunes on it."
+	name = "Cassette Tape"
+	desc = "Yes. Cassette."
 	icon = 'icons/obj/cassette.dmi'
 	icon_state = "cassette_0"
 	var/sound/sound_inside

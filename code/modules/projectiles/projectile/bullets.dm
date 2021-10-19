@@ -11,7 +11,7 @@
 	light_power = 2 //Tracers.
 	light_range = 2
 	light_color = "#E38F46"
-	penetration_modifier = 1.0
+	penetration_modifier = 1.2
 	var/mob_passthrough_check = 0
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 

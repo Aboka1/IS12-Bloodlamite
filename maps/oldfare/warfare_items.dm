@@ -447,14 +447,15 @@
 
 
 /obj/item/melee/trench_axe
-	name = "trench axe"
+	name = "Golden Axe"
 	desc = "Used mainly for murdering."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "trenchaxe"
 	item_state = "trenchaxe"
 	wielded_icon = "trenchaxe-w"
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
-	force = 20
+	force_unwielded = 20
+	force_wielded = 27
 	block_chance = 20
 	sharp = TRUE
 	edge = TRUE
