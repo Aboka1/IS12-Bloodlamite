@@ -1,5 +1,5 @@
 /obj/structure/dirt_wall
-	name = "dirt barricade"
+	name = "Dirt Barricade"
 	desc = "A land structure to cover your ass!" //change this stupid description
 	icon = 'icons/obj/warfare.dmi'
 	icon_state = "mound"
@@ -274,7 +274,7 @@
 				to_chat(H, "You fail to assemble the [src], cutting your [affecting.name]!")
 
 /obj/structure/barbwire
-	name = "barbed wire"
+	name = "Barbed Wire"
 	desc = "Passing through this looks painful."
 	icon = 'icons/obj/warfare.dmi'
 	icon_state = "barbwire"
@@ -399,7 +399,7 @@
 	icon_state = "telearray_ur"
 
 /obj/structure/anti_tank
-	name = "metal barricade"
+	name = "Metal Barricade"
 	desc = "Usually found in no man\'s land IN YOUR FUCKING WAY. It's dense enough to block bullets, don't even try to fucking shoot over it."
 	icon = 'icons/obj/warfare.dmi'
 	icon_state = "anti-tank"

@@ -1,7 +1,7 @@
 
 //Dirt!
 /turf/simulated/floor/dirty
-	name = "dirt" //"snowy dirt"
+	name = "Dirt" //"snowy dirt"
 	//icon = 'icons/turf/snow.dmi'
 	//icon_state = "snow_3"
 	icon = 'icons/turf/dirt.dmi'
