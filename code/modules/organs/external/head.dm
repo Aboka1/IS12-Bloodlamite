@@ -38,7 +38,7 @@
 /obj/item/organ/external/head/fracture()//Your head now has way more health but if you break it you're gonna fucking feel it.
 	..()
 	for(var/obj/item/organ/internal/brain/B in src)
-		B.take_damage(50)
+		B.take_damage(65)
 
 
 /obj/item/organ/external/head/set_dna(var/datum/dna/new_dna)

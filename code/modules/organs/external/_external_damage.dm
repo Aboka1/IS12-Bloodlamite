@@ -99,8 +99,8 @@
 
 	if(status & ORGAN_BROKEN && brute)
 		jostle_bone(brute)
-		//if(can_feel_pain() && prob(40))
-		//	owner.emote("scream")	//getting hit on broken hand hurts
+		if(can_feel_pain() && prob(40))
+			owner.emote("scream")	//getting hit on broken hand hurts
 
 	//If they aren't getting hit with a blunt object it shouldn't break their bones. If it's sharp enough to cut it off then it'll cut of it off, otherwise knives will shatter chests.
 	if(brute_dam > min_broken_damage && blunt)//prob(brute_dam + brute * (1+blunt)) ) //blunt damage is gud at fracturing

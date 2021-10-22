@@ -32,6 +32,8 @@ mob/var/next_pain_time = 0
 					if(has_quirk(/datum/quirk/tough))
 						return 0
 					flash_weakest_pain()
+					if(prob(5))
+						agony_moan()
 				if(50 to 90)
 					if(has_quirk(/datum/quirk/tough))
 						if(prob(75))

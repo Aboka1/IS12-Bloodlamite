@@ -112,6 +112,8 @@
 		)
 
 	switch(shock_damage)
+		if(11 to 15)
+			Stun(1)
 		if(16 to 20)
 			Stun(2)
 		if(21 to 25)

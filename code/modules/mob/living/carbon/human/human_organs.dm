@@ -106,7 +106,7 @@
 	if(stance_damage >= 4 || (stance_damage >= 2 && prob(5)))
 		if(!(lying || resting))
 		//	if(limb_pain)
-//				emote("scream")
+			emote("scream")
 			custom_emote(VISIBLE_MESSAGE, "collapses!")
 		Weaken(5) //can't emote while weakened, apparently.
 

@@ -89,10 +89,10 @@
 				moansound = 'sound/voice/child_moan1.ogg'
 
 			else if(src.gender == MALE)
-				moansound = "sound/voice/male_moan[rand(1,3)].ogg"
+				moansound = "sound/voice/male_moan_[rand(1,5)].ogg"
 
 			else
-				moansound = "sound/voice/female_moan[rand(1,3)].ogg"
+				moansound = "sound/voice/female_moan_wounded[rand(1,8)].ogg"
 
 			message = "moans."
 		else

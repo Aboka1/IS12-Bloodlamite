@@ -291,12 +291,29 @@
 	key = "groan"
 	emote_message_3p = "USER groans!"
 	conscious = 0
-
+/*
 /decl/emote/audible/moan
 	key = "moan"
 	emote_message_3p = "USER moans!"
 	conscious = 0
+	if(user.isMonkey())
+		return
 
+	else if(user.isChild())
+		emotesound = 'sound/voice/emotes/child_moan1.ogg'
+
+	else if(user.gender == MALE)
+		emotesound = "sound/voice/emotes/male_moan_[rand(1,5)].ogg"
+
+	else
+		emotesound = "sound/voice/emotes/female_moan_wounded[rand(1,8)].ogg"
+
+	if(emotesound)
+		playsound(user, emotesound, 50, 0, 1)
+
+	user.custom_emote(2,"moans.")
+	user.handle_emote_CD()
+*/
 /decl/emote/audible/giggle
 	key = "giggle"
 

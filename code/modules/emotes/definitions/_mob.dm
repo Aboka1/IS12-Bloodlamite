@@ -38,7 +38,6 @@
 		/decl/emote/audible/gasp,
 		/decl/emote/audible/scretch,
 		/decl/emote/audible/choke,
-		/decl/emote/audible/moan,
 		/decl/emote/audible/gnarl,
 		/decl/emote/audible/chirp
 		)
@@ -85,7 +84,6 @@
 		/decl/emote/audible/mumble,
 		/decl/emote/audible/grumble,
 		/decl/emote/audible/groan,
-		/decl/emote/audible/moan,
 		/decl/emote/audible/grunt,
 		/decl/emote/human,
 		/decl/emote/human/deathgasp,
@@ -153,7 +151,6 @@
 
 /mob/living/carbon/slime
 	default_emotes = list(
-		/decl/emote/audible/moan,
 		/decl/emote/visible/twitch,
 		/decl/emote/visible/sway,
 		/decl/emote/visible/shiver,

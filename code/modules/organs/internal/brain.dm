@@ -69,7 +69,7 @@
 /obj/item/organ/internal/brain/proc/transfer_identity(var/mob/living/carbon/H)
 	if(fake_brain)
 		return
-	
+
 	if(!brainmob)
 		brainmob = new(src)
 		brainmob.SetName(H.real_name)
