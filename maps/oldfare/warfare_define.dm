@@ -1,15 +1,15 @@
 
 /datum/map/warfare
-	name = "Rotten Field"
-	full_name = "Rotten Field"
-	path = "rotten field"
-	station_name  = "Rotten Field"
-	station_short = "RF"
-	dock_name     = "Rotten Field"
-	boss_name     = "Blakvasha Okca"
-	boss_short    = "BO"
-	company_name  = "Imprisonment"
-	company_short = "Imprisonment"
+	name = "Baitas"
+	full_name = "Baitas"
+	path = "baitas"
+	station_name  = "Baitas"
+	station_short = "Bs"
+	dock_name     = "Baitas"
+	boss_name     = "Blakvasha"
+	boss_short    = "Ba"
+	company_name  = "Cexes"
+	company_short = "Cexes"
 	system_name = "curse"
 
 	lobby_icon = 'maps/oldfare/fullscreen.dmi'
@@ -29,10 +29,10 @@
 	emergency_shuttle_leaving_dock = "The emergency escape shuttle has departed from %dock_name%."
 	emergency_shuttle_called_message = "An emergency escape shuttle has been sent."
 	emergency_shuttle_recall_message = "The emergency shuttle has been recalled"
-	map_lore = "It looks like we MUST fight. But why?"
+	map_lore = "It is dark here."
 
 
-
+/*
 //Overriding event containers to remove random events.
 /datum/event_container/mundane
 	available_events = list(
@@ -57,3 +57,4 @@
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mortars3",/datum/event/mortar,100),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mortars4",/datum/event/mortar,100)
 	)
+*/
