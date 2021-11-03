@@ -39,9 +39,22 @@
 	user.handle_emote_CD()
 
 /decl/emote/audible/gasp
-	key ="gasp"
+	key = "gasp"
 	emote_message_3p = "USER gasps."
 	conscious = 0
+
+/decl/emote/audible/gasp
+	emote_sound = list(
+		MALE = list(
+			'sound/voice/gasp_male1.ogg', 'sound/voice/gasp_male2.ogg',
+			'sound/voice/gasp_male3.ogg', 'sound/voice/gasp_male4.ogg',
+			'sound/voice/gasp_male5.ogg', 'sound/voice/gasp_male6.ogg',
+			'sound/voice/gasp_male7.ogg'),
+		FEMALE = list(
+			'sound/voice/gasp_female1.ogg', 'sound/voice/gasp_female2.ogg',
+			'sound/voice/gasp_female3.ogg', 'sound/voice/gasp_female4.ogg',
+			'sound/voice/gasp_female5.ogg', 'sound/voice/gasp_female6.ogg',
+			'sound/voice/gasp_female7.ogg'))
 
 /decl/emote/audible/scretch
 	key ="scretch"

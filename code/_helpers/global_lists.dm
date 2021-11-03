@@ -62,6 +62,7 @@ var/global/list/crafting_recipes = list()
 // Strings which corraspond to bodypart covering flags, useful for outputting what something covers.
 var/global/list/string_part_flags = list(
 	"head" = HEAD,
+	"neck" = NECK,
 	"face" = FACE,
 	"eyes" = EYES,
 	"upper body" = UPPER_TORSO,

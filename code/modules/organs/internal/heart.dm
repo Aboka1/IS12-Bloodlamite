@@ -9,7 +9,7 @@
 	var/beat_sound = 'sound/effects/singlebeat.ogg'
 	var/tmp/next_blood_squirt = 0
 	relative_size = 15
-	max_damage = 45
+	max_damage = 40
 	var/open
 
 /obj/item/organ/internal/heart/die()
@@ -27,9 +27,9 @@
 		if(pulse)
 			handle_heartbeat()
 			if(pulse == PULSE_2FAST && prob(1))
-				take_damage(0.5)
+				take_damage(1)
 			if(pulse == PULSE_THREADY && prob(5))
-				take_damage(0.5)
+				take_damage(1)
 		handle_blood()
 	..()
 
@@ -52,7 +52,7 @@
 	if(owner.status_flags & FAKEDEATH || owner.chem_effects[CE_NOPULSE])
 		pulse = Clamp(PULSE_NONE + pulse_mod, PULSE_NONE, PULSE_2FAST) //pretend that we're dead. unlike actual death, can be inflienced by meds
 		return
-	
+
 	//If heart is stopped, it isn't going to restart itself randomly.
 	if(pulse == PULSE_NONE)
 		return

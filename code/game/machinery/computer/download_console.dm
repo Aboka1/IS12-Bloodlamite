@@ -21,5 +21,5 @@
 		casseta.uploader_idiot = user.name
 		to_chat(user, "<span class='notice'>Tape completed!</span>")
 		log_and_message_admins("downloaded music with name [html_encode(N)]! if he loaded shit - just <b>ban</b>. Location = [get_area(user)]")
-		spawn(3 MINUTES)
+		spawn(1 MINUTES)
 			can_record_tape = TRUE

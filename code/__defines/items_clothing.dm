@@ -119,12 +119,14 @@
 #define HAND_LEFT   0x800
 #define HAND_RIGHT  0x1000
 #define HANDS       0x1800 // HAND_LEFT | HAND_RIGHT
+#define NECK        0x2000
 #define FULL_BODY   0xFFFF
 
 // Bitflags for the percentual amount of protection a piece of clothing which covers the body part offers.
 // Used with human/proc/get_heat_protection() and human/proc/get_cold_protection().
 // The values here should add up to 1, e.g., the head has 30% protection.
 #define THERMAL_PROTECTION_HEAD        0.3
+#define THERMAL_PROTECTION_NECK        0.2
 #define THERMAL_PROTECTION_UPPER_TORSO 0.15
 #define THERMAL_PROTECTION_LOWER_TORSO 0.15
 #define THERMAL_PROTECTION_LEG_LEFT    0.075

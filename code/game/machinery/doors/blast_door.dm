@@ -176,6 +176,7 @@
 		else
 			var/damage = 70
 			M.apply_damage(rand(40, damage), BRUTE, BP_HEAD)
+			M.apply_damage(rand(40, damage), BRUTE, BP_NECK)
 			M.apply_damage(rand(40, damage), BRUTE, BP_CHEST)
 			M.apply_damage(rand(40, damage), BRUTE, BP_L_LEG)
 			M.apply_damage(rand(40, damage), BRUTE, BP_R_LEG)

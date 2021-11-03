@@ -1,5 +1,6 @@
 /datum/job/soldier/red_soldier
 	title = "Red Weak Bum"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/soldier
 	is_red_team = TRUE
 	selection_color = "#b27676"
@@ -26,7 +27,7 @@
 
 /datum/job/soldier/red_soldier/sgt
 	title = "Red Main Bum"
-	total_positions = 3
+	total_positions = 0
 	social_class = SOCIAL_CLASS_MED
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sgt
 	can_be_in_squad = FALSE //They have snowflake shit for squads.
@@ -48,6 +49,7 @@
 
 /datum/job/soldier/red_soldier/medic
 	title = "Red Healer Bum"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/medic
 	can_be_in_squad = FALSE //We assign them to a squad seperately.
 
@@ -70,6 +72,7 @@
 
 /datum/job/soldier/red_soldier/engineer
 	title = "Red Engineer"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/engineer
 	engineering_skill = 10
 	auto_rifle_skill = 5
@@ -89,7 +92,7 @@
 
 /datum/job/soldier/red_soldier/sniper
 	title = "Red Jaeger Bum"
-	total_positions = 2
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sniper
 	auto_rifle_skill = 3
 	semi_rifle_skill = 3
@@ -111,7 +114,7 @@
 
 /datum/job/soldier/red_soldier/sentry
 	title = "Red Heavy Bum"
-	total_positions = 1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/sentry
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
@@ -156,7 +159,7 @@
 
 /datum/job/soldier/red_soldier/captain
 	title = "Red King Bum"
-	total_positions = 1
+	total_positions = 0
 	req_admin_notify = TRUE
 	social_class = SOCIAL_CLASS_HIGH
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/leader
@@ -188,7 +191,7 @@
 
 /datum/job/soldier/red_soldier/scout
 	title = "Red Scavenger"
-	total_positions = -1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/redsoldier/scout
 	child_role = TRUE
 	can_be_in_squad = FALSE

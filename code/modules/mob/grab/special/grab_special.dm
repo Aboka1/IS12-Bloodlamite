@@ -17,8 +17,8 @@
 	playsound(affecting.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	var/obj/O = get_targeted_organ()
 	var/grab_string = O.name
-	if(assailant.zone_sel.selecting == BP_THROAT)
-		grab_string = "throat"
+	if(assailant.zone_sel.selecting == BP_NECK)
+		grab_string = "neck"
 	visible_message("<span class='warning'>[assailant] grabs [affecting]'s [grab_string]!</span>")
 	affecting.grabbed_by += src
 

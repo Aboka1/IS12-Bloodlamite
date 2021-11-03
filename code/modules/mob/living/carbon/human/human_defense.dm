@@ -203,7 +203,7 @@ meteor_act
 		visible_message("<span class='danger'>[user] [I.get_attack_name()] [src]'s [affecting.name] with the [I], but it does no damage!")
 		return null
 
-	if(hit_zone == BP_CHEST || hit_zone == BP_MOUTH || hit_zone == BP_THROAT || hit_zone == BP_HEAD)//If we're lying and we're trying to aim high, we won't be able to hit.
+	if(hit_zone == BP_CHEST || hit_zone == BP_MOUTH || hit_zone == BP_NECK || hit_zone == BP_HEAD)//If we're lying and we're trying to aim high, we won't be able to hit.
 		if(user.lying && !src.lying)
 			to_chat(user, "<span class='notice'><b>I can't reach their [affecting.name]!</span></b>")
 			return null
@@ -222,13 +222,10 @@ meteor_act
 
 	var/organ_hit = affecting.name//This is spaghetti, but it's done so that it recognizes when you hit the throat, and when you hit something else instead.
 
-	if(aim_zone == BP_THROAT)
-		organ_hit = "throat"
-
 	var/blocked = run_armor_check(hit_zone, "melee", I.armor_penetration, "Your armor has protected your [affecting.name].", "Your armor has softened the blow to your [affecting.name].")
 
 
-	if(hit_zone != aim_zone && (aim_zone != BP_MOUTH) &&  (aim_zone != BP_THROAT) && (aim_zone != BP_EYES))//This is ugly but it works.
+	if(hit_zone != aim_zone && (aim_zone != BP_MOUTH) && (aim_zone != BP_EYES))//This is ugly but it works.
 		visible_message("<span class='danger'>[user] aimed for [src]\'s [aimed.name], but [I.get_attack_name()] \his [organ_hit] instead.</span> <span class='combat_success'>[(blocked < 20 && blocked > 1)  ? "Slight damage was done." : ""]</span>")
 
 	else if(blocked < 20 && blocked > 1)//This is ugly and it doesn't work.
@@ -557,6 +554,7 @@ meteor_act
 	var/perm = 0
 
 	var/list/perm_by_part = list(
+		"neck" = THERMAL_PROTECTION_NECK,
 		"head" = THERMAL_PROTECTION_HEAD,
 		"upper_torso" = THERMAL_PROTECTION_UPPER_TORSO,
 		"lower_torso" = THERMAL_PROTECTION_LOWER_TORSO,
@@ -571,6 +569,8 @@ meteor_act
 			continue
 		if(C.body_parts_covered & HEAD)
 			perm_by_part["head"] *= C.permeability_coefficient
+		if(C.body_parts_covered & NECK)
+			perm_by_part["neck"] *= C.permeability_coefficient
 		if(C.body_parts_covered & UPPER_TORSO)
 			perm_by_part["upper_torso"] *= C.permeability_coefficient
 		if(C.body_parts_covered & LOWER_TORSO)
@@ -621,7 +621,7 @@ meteor_act
 
 	var/armour = run_armor_check(hit_zone, "melee")
 	switch(hit_zone)
-		if(BP_CHEST)//If we aim for the chest we kick them in the direction we're facing.
+		if(BP_CHEST, BP_GROIN)//If we aim for the chest (or groin) we kick them in the direction we're facing.
 			if(lying)
 				var/turf/target = get_turf(src.loc)
 				var/range = src.throw_range
@@ -646,6 +646,11 @@ meteor_act
 				return
 
 		if(BP_HEAD)
+			if(!lying)
+				to_chat(user, too_high_message)
+				return
+
+		if(BP_NECK)
 			if(!lying)
 				to_chat(user, too_high_message)
 				return

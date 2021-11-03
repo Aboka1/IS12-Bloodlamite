@@ -65,14 +65,15 @@ note dizziness decrements automatically in the mob's Life() proc.
 	is_jittery = 1
 	while(jitteriness > 100)
 		var/amplitude = min(4, jitteriness / 100)
-		pixel_x = default_pixel_x + rand(-amplitude, amplitude)
-		pixel_y = default_pixel_y + rand(-amplitude/3, amplitude/3)
-
+		do_jitter(amplitude)
 		sleep(1)
 	//endwhile - reset the pixel offsets to zero
 	is_jittery = 0
-	pixel_x = default_pixel_x
-	pixel_y = default_pixel_y
+	do_jitter(0)
+
+/mob/proc/do_jitter(amplitude)
+	pixel_x = default_pixel_x + rand(-amplitude, amplitude)
+	pixel_y = default_pixel_y + rand(-amplitude/3, amplitude/3)
 
 
 //handles up-down floaty effect in space and zero-gravity
@@ -241,4 +242,4 @@ note dizziness decrements automatically in the mob's Life() proc.
 		return
 	animate(L, pixel_z = 4, time = 0)
 	animate(pixel_z = 0, transform = turn(matrix(), pick(-12, 0, 12)), time=2)
-	animate(pixel_z = 0, transform = matrix(), time = 0) 
+	animate(pixel_z = 0, transform = matrix(), time = 0)

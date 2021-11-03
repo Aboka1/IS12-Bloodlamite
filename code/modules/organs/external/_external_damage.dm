@@ -99,7 +99,7 @@
 
 	if(status & ORGAN_BROKEN && brute)
 		jostle_bone(brute)
-		if(can_feel_pain() && prob(40))
+		if(can_feel_pain() && prob(45))
 			owner.emote("scream")	//getting hit on broken hand hurts
 
 	//If they aren't getting hit with a blunt object it shouldn't break their bones. If it's sharp enough to cut it off then it'll cut of it off, otherwise knives will shatter chests.
@@ -267,7 +267,7 @@
 		var/obj/item/organ/internal/heart/O = species.has_organ[BP_HEART]
 		if(robotic < ORGAN_ROBOT && !(status & ORGAN_ARTERY_CUT) && !initial(O.open))
 			status |= ORGAN_ARTERY_CUT
-			if(artery_name == "carotid artery")
+			if(artery_name == "external carotid artery")
 				playsound(owner.loc, 'sound/voice/throat.ogg', 50, 1, -1)
 			return TRUE
 	return FALSE

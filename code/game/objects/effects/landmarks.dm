@@ -150,11 +150,8 @@
 	name = "Cadet"
 /obj/effect/landmark/start/heir
 	name = "Heir"
-/obj/effect/landmark/start/rwb
-	name = "Red Weak Bum"
-/obj/effect/landmark/start/bwb
-	name = "Blue Weak Bum"
-
+/obj/effect/landmark/start/goned
+	name = "Goned"
 
 //Costume spawner landmarks
 /obj/effect/landmark/costume/New() //costume spawner, selects a random subclass and disappears

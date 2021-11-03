@@ -2,7 +2,7 @@
 	title = "Bum"
 	department = "Security"
 	department_flag = SEC
-	total_positions = -1
+	total_positions = 0
 	create_record = FALSE
 	account_allowed = FALSE
 	social_class = SOCIAL_CLASS_MIN

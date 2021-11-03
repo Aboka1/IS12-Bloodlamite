@@ -406,6 +406,7 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 	//Due to TG reworking how fireprotection works, this is kinda less meaningful.
 
 	var/head_exposure = 1
+	var/neck_exposure = 1
 	var/chest_exposure = 1
 	var/groin_exposure = 1
 	var/legs_exposure = 1
@@ -420,6 +421,8 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 		if( C.max_heat_protection_temperature >= last_temperature )
 			if(C.body_parts_covered & HEAD)
 				head_exposure = 0
+			if(C.body_parts_covered & NECK)
+				neck_exposure = 0
 			if(C.body_parts_covered & UPPER_TORSO)
 				chest_exposure = 0
 			if(C.body_parts_covered & LOWER_TORSO)
@@ -434,6 +437,7 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
 	//Always check these damage procs first if fire damage isn't working. They're probably what's wrong.
 
 	apply_damage(2.5*mx*head_exposure,  BURN, BP_HEAD,  0, 0, "Fire")
+	apply_damage(2.5*mx*neck_exposure,  BURN, BP_HEAD,  0, 0, "Fire")
 	apply_damage(2.5*mx*chest_exposure, BURN, BP_CHEST, 0, 0, "Fire")
 	apply_damage(2.0*mx*groin_exposure, BURN, BP_GROIN, 0, 0, "Fire")
 	apply_damage(0.6*mx*legs_exposure,  BURN, BP_L_LEG, 0, 0, "Fire")

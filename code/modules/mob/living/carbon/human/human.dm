@@ -1621,6 +1621,7 @@
 		else
 			visible_message("\The [src] twitches a bit as \his heart restarts!")
 		shock_stage = min(shock_stage, 100) // 120 is the point at which the heart stops.
+		make_jittery(400)
 		if(getOxyLoss() >= 75)
 			setOxyLoss(75)
 		heart.pulse = PULSE_NORM

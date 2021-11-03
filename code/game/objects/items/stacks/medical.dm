@@ -241,7 +241,7 @@
 	amount = 10
 	max_amount = 10
 	animal_heal = 0
-	var/list/splintable_organs = list(BP_HEAD, BP_CHEST, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT)	//List of organs you can splint, natch.
+	var/list/splintable_organs = list(BP_HEAD, BP_NECK, BP_CHEST, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT)	//List of organs you can splint, natch.
 
 /obj/item/stack/medical/splint/attack(mob/living/carbon/M as mob, mob/living/carbon/human/user as mob)
 	if(..())

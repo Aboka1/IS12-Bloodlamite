@@ -133,9 +133,14 @@ var/global/list/sparring_attack_cache = list()
 	eye_attack_text_victim = "digits"
 	damage = 0
 
+/datum/unarmed_attack/punch/get_unarmed_damage(var/mob/living/carbon/human/user)
+	var/obj/item/clothing/gloves = user.gloves
+	return damage + (gloves ? gloves.force : 0)
+
 /datum/unarmed_attack/punch/show_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone, var/attack_damage)
 	var/obj/item/organ/external/affecting = target.get_organ(zone)
 	var/organ = affecting.name
+	var/obj/item/clothing/gloves = user.gloves
 
 	attack_damage = Clamp(attack_damage, 1, 5) // We expect damage input of 1 to 5 for this proc. But we leave this check juuust in case.
 
@@ -147,26 +152,28 @@ var/global/list/sparring_attack_cache = list()
 		switch(zone)
 			if(BP_HEAD, BP_MOUTH, BP_EYES)
 				// ----- HEAD ----- //
+				var/glove_text = gloves ? copytext(gloves.name, 1, -1) : "hand"
 				switch(attack_damage)
 					if(1 to 2)
-						user.visible_message("<span class='danger'>[user] slapped [target] across \his cheek!</span>")
+						user.visible_message("<span class='danger'>[user] slapped [target] across \his cheek with their [glove_text]!</span>")
 					if(3 to 4)
 						user.visible_message(pick(
-							80; "<span class='danger'>[user] [pick(attack_verb)] [target] in the head!</span>",
-							20; "<span class='danger'>[user] struck [target] in the head[pick("", " with a closed fist")]!</span>",
-							50; "<span class='danger'>[user] threw a hook against [target]'s head!</span>"
+							80; "<span class='danger'>[user] [pick(attack_verb)] [target] in the head with their [glove_text]!</span>",
+							20; "<span class='danger'>[user] struck [target] in the head with their [glove_text]</span>",
+							50; "<span class='danger'>[user] threw a hook against [target]'s head with their [glove_text]!</span>"
 							))
 					if(5)
 						user.visible_message(pick(
-							10; "<span class='danger'>[user] gave [target] a solid slap across \his face!</span>",
-							90; "<span class='danger'>[user] smashed \his [pick(attack_noun)] into [target]'s [pick("[organ]", "face", "jaw")]!</span>"
+							10; "<span class='danger'>[user] gave [target] a solid slap across \his face with their [glove_text]!</span>",
+							90; "<span class='danger'>[user] smashed \his [pick(attack_noun)] into [target]'s [pick("[organ]", "face", "jaw")] with their [glove_text]!</span>"
 							))
 			else
 				// ----- BODY ----- //
+				var/glove_text = gloves ? copytext(gloves.name, 1, -1) : "hand"
 				switch(attack_damage)
-					if(1 to 2)	user.visible_message("<span class='danger'>[user] threw a glancing punch at [target]'s [organ]!</span>")
-					if(1 to 4)	user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [target] in \his [organ]!</span>")
-					if(5)		user.visible_message("<span class='danger'>[user] smashed \his [pick(attack_noun)] into [target]'s [organ]!</span>")
+					if(1 to 2)	user.visible_message("<span class='danger'>[user] threw a glancing punch at [target]'s [organ] with their [glove_text]!</span>")
+					if(1 to 4)	user.visible_message("<span class='danger'>[user] [pick(attack_verb)] [target] in \his [organ] with their [glove_text]!</span>")
+					if(5)		user.visible_message("<span class='danger'>[user] smashed \his [pick(attack_noun)] into [target]'s [organ] with their [glove_text]!</span>")
 	else
 		user.visible_message("<span class='danger'>[user] [pick("punched", "threw a punch at", "struck", "slammed their [pick(attack_noun)] into")] [target]'s [organ]!</span>") //why do we have a separate set of verbs for lying targets?
 

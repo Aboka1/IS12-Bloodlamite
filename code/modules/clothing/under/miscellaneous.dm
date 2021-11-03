@@ -687,4 +687,4 @@
 	desc = "Heretics beware."
 	icon_state = "uni-church"
 	item_state = "uni-church"
-	//_color = "uni-church" 
+	//_color = "uni-church"

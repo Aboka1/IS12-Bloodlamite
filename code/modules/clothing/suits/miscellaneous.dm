@@ -546,3 +546,10 @@
 	body_parts_covered = UPPER_TORSO|ARMS|LOWER_TORSO|LEGS
 	allowed = list(/obj/item/nullrod, /obj/item/storage/bible)
 	armor = list(melee = 40, bullet = 25, laser = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
+
+/obj/item/clothing/suit/rags
+	name = "Rags"
+	desc = "It looks very dirty and shabby."
+	icon_state = "bestarmor"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	armor = list(melee = 1, bullet = 1, laser = 1, energy = 0, bomb = 1, bio = 0, rad = 0)

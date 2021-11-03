@@ -224,7 +224,7 @@
 		if(50 to 52)//Neck
 			switch(icon_x)
 				if(14 to 19)
-					selecting = BP_THROAT
+					selecting = BP_NECK
 
 		if(53 to 60) //Head, but we need to check for eye or mouth
 			switch(icon_x)
@@ -235,10 +235,10 @@
 				if(13 to 20)
 					selecting = BP_MOUTH
 
-		//if(77 to 81)
-		//	switch(icon_x)
-		//		if(11 to 22)
-		//			selecting = BP_EYES
+		if(77 to 81)
+			switch(icon_x)
+				if(11 to 22)
+					selecting = BP_EYES
 
 
 	if(old_selecting != selecting)

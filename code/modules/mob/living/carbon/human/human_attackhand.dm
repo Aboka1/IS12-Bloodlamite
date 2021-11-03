@@ -160,7 +160,7 @@
 
 				switch(H.zone_sel.selecting)
 					//Strangling
-					if(BP_THROAT)
+					if(BP_NECK)
 						return H.make_grab(H, src, GRAB_STRANGLE)
 
 					//Wrenching

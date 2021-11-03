@@ -78,7 +78,7 @@
 	var/turf/starting			// the projectile's starting turf
 	var/list/permutated			// we've passed through these atoms, don't try to hit them again
 	var/penetrating = 0			//If greater than zero, the projectile will pass through dense objects as specified by on_penetrate()
-	var/penetration_modifier = 0.5 //How much internal damage this projectile can deal, as a multiplier.
+//	var/penetration_modifier = 0.5 //How much internal damage this projectile can deal, as a multiplier.
 	var/forcedodge = FALSE		//to pass through everything
 	var/ignore_source_check = FALSE
 

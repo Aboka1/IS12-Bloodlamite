@@ -5,9 +5,9 @@
 	organ_tag = BP_LUNGS
 	parent_organ = BP_CHEST
 	w_class = ITEM_SIZE_NORMAL
-	min_bruised_damage = 25
-	min_broken_damage = 45
-	max_damage = 70
+	min_bruised_damage = 20
+	min_broken_damage = 40
+	max_damage = 65
 	relative_size = 60
 
 	var/active_breathing = 1
@@ -88,7 +88,7 @@
 				)
 
 			owner.drip(10)
-		if(prob(4))
+		if(prob(15))
 			if(active_breathing)
 				owner.visible_message(
 					"<B>\The [owner]</B> gasps for air!",
@@ -98,7 +98,7 @@
 			else
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
 
-			owner.losebreath += round(damage/2)
+			owner.losebreath = max(round(damage / 2), owner.losebreath)
 
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
@@ -250,12 +250,6 @@
 	if(prob(15) && !owner.nervous_system_failure())
 		if(!owner.is_asystole())
 			if(active_breathing)
-				if(owner.lying && istype(owner.loc, /turf/simulated/floor/exoplanet/water/shallow))
-					owner.gasp_sound(drowning = TRUE)
-				else if(is_bruised())
-					owner.gasp_sound(collapsed_lung = TRUE)
-				else
-					owner.gasp_sound()
 				owner.emote("gasp")
 		else
 			owner.emote(pick("shiver","twitch"))

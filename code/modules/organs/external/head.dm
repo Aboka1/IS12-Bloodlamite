@@ -4,19 +4,19 @@
 	icon_name = "head"
 	name = "head"
 	slot_flags = SLOT_BELT
-	max_damage = 100
-	min_broken_damage = 50
+	max_damage = 120
+	min_broken_damage = 40
 	w_class = ITEM_SIZE_NORMAL
 	body_part = HEAD
 	vital = 1
-	parent_organ = BP_CHEST
-	joint = "jaw"
+	parent_organ = BP_NECK
+	joint = "neck"
 	amputation_point = "neck"
 	gendered_icon = 1
 	encased = "skull"
-	artery_name = "carotid artery"
+	artery_name = "internal carotid artery"
 	cavity_name = "cranial"
-	arterial_bleed_severity = 5
+	arterial_bleed_severity = 1.5
 	break_sound = "headsmash"
 
 	var/can_intake_reagents = 1
@@ -38,7 +38,7 @@
 /obj/item/organ/external/head/fracture()//Your head now has way more health but if you break it you're gonna fucking feel it.
 	..()
 	for(var/obj/item/organ/internal/brain/B in src)
-		B.take_damage(65)
+		B.take_damage(95)
 
 
 /obj/item/organ/external/head/set_dna(var/datum/dna/new_dna)

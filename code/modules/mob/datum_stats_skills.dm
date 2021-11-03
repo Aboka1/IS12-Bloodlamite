@@ -320,7 +320,7 @@ proc/dexToAccuracyModifier(var/dexterity)
 	return dexterity - 10
 
 proc/strToDamageModifier(var/strength)
-	return strength * 0.1
+	return strength * 0.2
 
 proc/endToStaminaModifier(var/endurance)
 	return (endurance - 10) * 15

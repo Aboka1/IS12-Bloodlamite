@@ -120,7 +120,7 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_in_backpack)
 			return 1
 		if(slot_tie)
-			return has_organ(BP_HEAD)
+			return has_organ(BP_NECK)
 
 /mob/living/carbon/human/u_equip(obj/W as obj)
 	if(!W)	return 0

@@ -280,13 +280,13 @@ var/list/mob/living/forced_ambiance_list = new
 	if(forced_ambience)
 		if(forced_ambience.len)
 			forced_ambiance_list |= L
-			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 25, channel = 2))
+			L.playsound_local(T,sound(pick(forced_ambience), repeat = 1, wait = 0, volume = 20, channel = 2))
 		else
 			sound_to(L, sound(null, channel = 2))
 	if(src.ambience.len && prob(35))
-		if((world.time >= L.client.played + 3 MINUTES))
+		if((world.time >= L.client.played + 2 MINUTES))
 			var/sound = pick(ambience)
-			L.playsound_local(T, sound(sound, repeat = 0, wait = 0, volume = 30, channel = 5))
+			L.playsound_local(T, sound(sound, repeat = 0, wait = 0, volume = 35, channel = 5))
 			L.client.played = world.time
 
 /area/proc/change_zone_ambience(var/mob/living/L)

@@ -15,7 +15,7 @@
 	title = "Blue Chef"
 	outfit_type = /decl/hierarchy/outfit/job/service/chef/blue
 	access = list(access_hydroponics, access_bar, access_kitchen)
-	total_positions = 2
+	total_positions = 0
 	social_class = SOCIAL_CLASS_MED
 
 	equip(var/mob/living/carbon/human/H)
@@ -33,7 +33,7 @@
 	title = "Blue Practitioner"
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor/blue
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics)
-	total_positions = -1
+	total_positions = 0
 	social_class = SOCIAL_CLASS_MED
 	medical_skill = 10
 	surgery_skill = 10

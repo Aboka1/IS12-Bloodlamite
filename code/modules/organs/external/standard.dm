@@ -9,7 +9,7 @@
 	organ_tag = BP_CHEST
 	icon_name = "torso"
 	max_damage = 100
-	min_broken_damage = 35
+	min_broken_damage = 30
 	w_class = ITEM_SIZE_HUGE //Used for dismembering thresholds, in addition to storage. Humans are w_class 6, so it makes sense that chest is w_class 5.
 	body_part = UPPER_TORSO
 	vital = 1
@@ -41,7 +41,7 @@
 	organ_tag = BP_GROIN
 	icon_name = "groin"
 	max_damage = 100
-	min_broken_damage = 35
+	min_broken_damage = 30
 	w_class = ITEM_SIZE_LARGE
 	body_part = LOWER_TORSO
 	vital = TRUE
@@ -59,7 +59,7 @@
 	name = "left arm"
 	icon_name = "l_arm"
 	max_damage = 50
-	min_broken_damage = 30
+	min_broken_damage = 26
 	w_class = ITEM_SIZE_NORMAL
 	body_part = ARM_LEFT
 	parent_organ = BP_CHEST
@@ -105,7 +105,7 @@
 	name = "left leg"
 	icon_name = "l_leg"
 	max_damage = 100
-	min_broken_damage = 50
+	min_broken_damage = 35
 	w_class = ITEM_SIZE_NORMAL
 	body_part = LEG_LEFT
 	icon_position = LEFT
@@ -153,7 +153,7 @@
 	name = "left foot"
 	icon_name = "l_foot"
 	max_damage = 100
-	min_broken_damage = 50
+	min_broken_damage = 35
 	w_class = ITEM_SIZE_SMALL
 	body_part = FOOT_LEFT
 	icon_position = LEFT
@@ -204,7 +204,7 @@
 	name = "left hand"
 	icon_name = "l_hand"
 	max_damage = 100
-	min_broken_damage = 50
+	min_broken_damage = 35
 	w_class = ITEM_SIZE_SMALL
 	body_part = HAND_LEFT
 	parent_organ = BP_L_ARM
@@ -245,3 +245,39 @@
 	robotize("Limbs R US")
 	icon = 'icons/mob/human_races/cyberlimbs/warfare/warfare_main.dmi'
 	icon_state = "hand"
+
+/obj/item/organ/external/neck
+	name = "neck"
+	organ_tag = BP_NECK
+	icon_name = "neck"
+	max_damage = 90
+	min_broken_damage = 30
+	w_class = ITEM_SIZE_NORMAL
+	body_part = NECK
+	vital = 1
+	amputation_point = "chest"
+	joint = "chest"
+	parent_organ = BP_CHEST
+	encased = "spine"
+	artery_name = "external carotid artery"
+	cavity_name = "oral"
+	arterial_bleed_severity = 5
+//	cannot_amputate = 1
+/*
+/obj/item/organ/external/neck/fracture()
+	..()
+	for(var/obj/item/organ/internal/brain/B in src)
+		B.take_damage(110)
+
+/obj/item/organ/external/neck/removed()
+	if(owner)
+		SetName("[owner.real_name]'s head")
+		owner.drop_from_inventory(owner.glasses)
+		owner.drop_from_inventory(owner.head)
+		owner.drop_from_inventory(owner.l_ear)
+		owner.drop_from_inventory(owner.r_ear)
+		owner.drop_from_inventory(owner.wear_mask)
+		spawn(1)
+			owner.update_hair()
+	..()
+*/

@@ -1,5 +1,5 @@
 /obj/item/organ/internal/brain
-	name = "brain"
+	name = "Brain"
 	desc = "A piece of juicy meat found in a person's head."
 	organ_tag = BP_BRAIN
 	parent_organ = BP_HEAD
@@ -13,7 +13,7 @@
 	origin_tech = list(TECH_BIO = 3)
 	attack_verb = list("attacked", "slapped", "whacked")
 	relative_size = 60
-	max_damage = 120
+	max_damage = 100
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null
@@ -50,11 +50,11 @@
 
 /obj/item/organ/internal/brain/New(var/mob/living/carbon/holder)
 	..()
-	max_damage = 200
+	max_damage = 125
 	if(species)
 		max_damage = species.total_health
-	min_bruised_damage = max_damage*0.25
-	min_broken_damage = max_damage*0.75
+	min_bruised_damage = max_damage*0.20
+	min_broken_damage = max_damage*0.50
 
 	damage_threshold_value = round(max_damage / damage_threshold_count)
 	spawn(5)
@@ -173,17 +173,19 @@
 
 			if(owner.stat == CONSCIOUS)
 				if(damage > 0 && prob(1))
-					owner.custom_pain("Your head feels numb and painful.",10)
+					owner.custom_pain("My head feels numb and painful.",10)
 				if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
 					to_chat(owner, "<span class='warning'>It becomes hard to see for some reason.</span>")
 					owner.eye_blurry = 10
 				if(is_broken() && prob(1) && owner.get_active_hand())
-					to_chat(owner, "<span class='danger'>Your hand won't respond properly, and you drop what you are holding!</span>")
+					to_chat(owner, "<span class='danger'>My hand won't respond properly, and I dropped what I was holding!!</span>")
 					owner.drop_item()
-				if((damage >= (max_damage * 0.75)))
+				if((damage >= (max_damage * 0.50)))
 					if(!owner.lying)
-						to_chat(owner, "<span class='danger'>You black out!</span>")
+						to_chat(owner, "<span class='danger'>I'm almost dead.</span>")
 					owner.Paralyse(10)
+					owner.adjustOxyLoss(rand(15,20))
+					owner.make_jittery(400)
 
 		// Brain damage from low oxygenation or lack of blood.
 		if(owner.should_have_organ(BP_HEART))
@@ -206,26 +208,26 @@
 						to_chat(owner, "<span class='warning'>You feel [pick("dizzy","woozy","faint")]...</span>")
 					damprob = owner.chem_effects[CE_STABLE] ? 30 : 60
 					if(!past_damage_threshold(2) && prob(damprob))
-						take_damage(1)
+						take_damage(3)
 				if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+//					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 40 : 80
 					if(!past_damage_threshold(4) && prob(damprob))
-						take_damage(1)
+						take_damage(3)
 					if(!owner.paralysis && prob(10))
 						owner.Paralyse(rand(1,3))
 						to_chat(owner, "<span class='warning'>You feel extremely [pick("dizzy","woozy","faint")]...</span>")
 				if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-					owner.eye_blurry = max(owner.eye_blurry,6)
+//					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 60 : 100
 					if(!past_damage_threshold(6) && prob(damprob))
-						take_damage(1)
+						take_damage(3)
 					if(!owner.paralysis && prob(15))
 						owner.Paralyse(3,5)
 						to_chat(owner, "<span class='warning'>You feel extremely [pick("dizzy","woozy","faint")]...</span>")
 				if(-(INFINITY) to BLOOD_VOLUME_SURVIVE) // Also see heart.dm, being below this point puts you into cardiac arrest.
-					owner.eye_blurry = max(owner.eye_blurry,6)
+//					owner.eye_blurry = max(owner.eye_blurry,6)
 					damprob = owner.chem_effects[CE_STABLE] ? 80 : 100
 					if(prob(damprob))
-						take_damage(1)
+						take_damage(3)
 	..()

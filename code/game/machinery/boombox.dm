@@ -87,7 +87,7 @@
 	if(!casseta.sound_inside)
 		return
 
-	sound_token = sound_player.PlayLoopingSound(src, sound_id, casseta.sound_inside, volume = 50, range = 9, falloff = 3, prefer_mute = TRUE, ignore_vis = TRUE)
+	sound_token = sound_player.PlayLoopingSound(src, sound_id, casseta.sound_inside, volume = 65, range = 12, falloff = 4, prefer_mute = TRUE, ignore_vis = TRUE)
 	playing = 1
 
 /obj/item/device/cassette

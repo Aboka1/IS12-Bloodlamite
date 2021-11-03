@@ -24,6 +24,11 @@ GLOBAL_LIST_EMPTY(mortar_areas) // = list()
 	dynamic_lighting = TRUE
 	requires_power = FALSE
 
+/area/darkplace
+	music = 'sound/music/ahorbahur.ogg'
+	dynamic_lighting = TRUE
+	requires_power = FALSE
+
 /area/warfare/battlefield
 	name = "\improper Battlefield"
 	var/captured = null

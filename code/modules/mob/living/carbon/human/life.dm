@@ -268,7 +268,7 @@
 					to_chat(src, "<span class='warning'>You feel strange!</span>")
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
 					emote("gasp")
-					gasp_sound()
+//					gasp_sound()
 		if(radiation > 150)
 			damage = 8
 			radiation -= 4 * RADIATION_SPEED_COEFFICIENT
@@ -500,6 +500,8 @@
 	if(flags)
 		if(flags & HEAD)
 			. += THERMAL_PROTECTION_HEAD
+		if(flags & NECK)
+			. += THERMAL_PROTECTION_NECK
 		if(flags & UPPER_TORSO)
 			. += THERMAL_PROTECTION_UPPER_TORSO
 		if(flags & LOWER_TORSO)
@@ -1035,7 +1037,7 @@
 		if(shock_stage == 30)
 			visible_message("<b>[src]</b> is having trouble keeping \his eyes open.")
 		if(prob(30))
-			eye_blurry = max(2, eye_blurry)
+//			eye_blurry = max(2, eye_blurry)
 			stuttering = max(stuttering, 5)
 
 	if(shock_stage == 40)

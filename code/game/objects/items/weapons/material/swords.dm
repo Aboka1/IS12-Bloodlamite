@@ -144,6 +144,7 @@
 	force_divisor = 0.4
 	thrown_force_divisor = 0.4
 	block_chance = 50
+	penetration_modifier = 5
 
 
 /obj/item/material/sword/machete

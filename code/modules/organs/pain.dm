@@ -32,7 +32,7 @@ mob/var/next_pain_time = 0
 					if(has_quirk(/datum/quirk/tough))
 						return 0
 					flash_weakest_pain()
-					if(prob(5))
+					if(prob(50))
 						agony_moan()
 				if(50 to 90)
 					if(has_quirk(/datum/quirk/tough))
@@ -41,6 +41,8 @@ mob/var/next_pain_time = 0
 					flash_weak_pain()
 					if(stuttering < 10)
 						stuttering += 5
+					if(prob(80))
+						agony_moan()
 				if(90 to INFINITY)
 					if(has_quirk(/datum/quirk/tough))
 						if(prob(50))
@@ -48,7 +50,7 @@ mob/var/next_pain_time = 0
 					flash_pain()
 					if(stuttering < 10)
 						stuttering += 10
-					if(prob(5))
+					if(prob(10))
 						Stun(5)//makes you drop what you're holding.
 						Weaken(1)//knocks you over
 						agony_scream()

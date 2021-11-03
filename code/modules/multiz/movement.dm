@@ -256,8 +256,9 @@
 			to_chat(src, "<span class = 'notice'>You land softly.</span>")
 			return
 		playsound(src.loc, 'sound/effects/gore/fallsmash.ogg', 75, 1)//Splat
-		var/damage = 20
+		var/damage = 25
 		apply_damage(rand(0, damage), BRUTE, BP_HEAD)
+		apply_damage(rand(0, damage), BRUTE, BP_NECK)
 		apply_damage(rand(0, damage), BRUTE, BP_CHEST)
 		apply_damage(rand(0, damage), BRUTE, BP_L_LEG)
 		apply_damage(rand(0, damage), BRUTE, BP_R_LEG)

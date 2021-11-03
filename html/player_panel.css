@@ -7,7 +7,7 @@ background-repeat:repeat-x;
 a {text-decoration: none;outline: none;border: none;margin:-1px;}
 a:focus{outline:none;border: none;}
 a:hover {Color:#0d0d0d;background:#505055;outline: none;border: none;text-decoration: none;}
-a.active {text-decoration:none; text-decoration:none; Color:#533333;border: none;}
+a.active {text-decoration:none; text-decoration:none; Color:#4d243c;border: none;}
 a.inactive:hover {text-decoration:none;Color:#0d0d0d;background:#bb0000;border: none;}
 a.active:hover {text-decoration:none;Color:#bb0000;background:#0f0f0f;}
 a.inactive:hover {text-decoration:none; Color:#0d0d0d; background:#bb0000;border: none;}

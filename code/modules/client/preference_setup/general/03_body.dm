@@ -192,6 +192,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 				organ_name = "upper body"
 			if(BP_GROIN)
 				organ_name = "lower body"
+			if(BP_NECK)
+				organ_name = "neck"
 			if(BP_HEAD)
 				organ_name = "head"
 

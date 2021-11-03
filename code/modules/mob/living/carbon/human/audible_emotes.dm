@@ -37,8 +37,8 @@
 		custom_emote(2,message)
 	shake_camera(src, 20, 3)//suffer well pupper
 	handle_emote_CD()
-
-/mob/proc/gasp_sound(var/collapsed_lung = FALSE, var/drowning = FALSE)
+/*
+/mob/proc/gasp_sound()
 	var/gaspsound = null
 	var/muzzled = istype(wear_mask, /obj/item/clothing/mask/muzzle)
 	if(stat)
@@ -50,25 +50,16 @@
 		custom_emote(2,"[src.name] makes a muffled gasping noise.")
 		return
 
-	if(gender == MALE)
-		if(drowning)
-			gaspsound =	"sound/voice/emotes/gurp_male[rand(1,2)].ogg"
-		else
-			gaspsound = "sound/voice/gasp_male[rand(1,7)].ogg"
+	if(src.gender == MALE)
+		gaspsound = "sound/voice/gasp_male[rand(1,7)].ogg"
 
-	if(gender == FEMALE)
-		if(drowning)
-			gaspsound = "sound/voice/emotes/gurp_female[rand(1,2)].ogg"
-		else
-			gaspsound = "sound/voice/gasp_female[rand(1,7)].ogg"
-
-	if(collapsed_lung)
-		gaspsound = "sound/voice/gasp[rand(1,3)].ogg"
+	if(src.gender == FEMALE)
+		gaspsound = "sound/voice/gasp_female[rand(1,7)].ogg"
 
 	if(gaspsound)
 		playsound(src, gaspsound, 25, 0, 1)
 	handle_emote_CD()
-
+*/
 
 /mob/proc/agony_moan()
 	if(stat)

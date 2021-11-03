@@ -1,5 +1,6 @@
 /datum/job/soldier/blue_soldier
 	title = "Blue Weak Bum"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/soldier
 	is_blue_team = TRUE
 	selection_color = "#76abb2"
@@ -26,7 +27,7 @@
 
 /datum/job/soldier/blue_soldier/sgt
 	title = "Blue Main Bum"
-	total_positions = 3
+	total_positions = 0
 	social_class = SOCIAL_CLASS_MED
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/sgt
 	can_be_in_squad = FALSE //They have snowflake squad bullshit.
@@ -49,6 +50,7 @@
 
 /datum/job/soldier/blue_soldier/medic
 	title = "Blue Healer Bum"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/medic
 	can_be_in_squad = FALSE //We assign them to a squad seperately.
 
@@ -72,6 +74,7 @@
 
 /datum/job/soldier/blue_soldier/engineer
 	title = "Blue Engineer"
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/engineer
 	engineering_skill = 10
 	auto_rifle_skill = 5
@@ -92,7 +95,7 @@
 
 /datum/job/soldier/blue_soldier/sniper
 	title = "Blue Jaeger Bum"
-	total_positions = 2
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/sniper
 	auto_rifle_skill = 3
 	semi_rifle_skill = 3
@@ -136,7 +139,7 @@
 
 /datum/job/soldier/blue_soldier/sentry
 	title = "Blue Heavy Bum"
-	total_positions = 1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/sentry
 	auto_rifle_skill = 5
 	semi_rifle_skill = 5
@@ -160,7 +163,7 @@
 
 /datum/job/soldier/blue_soldier/captain
 	title = "Blue King Bum"
-	total_positions = 1
+	total_positions = 0
 	req_admin_notify = TRUE
 	social_class = SOCIAL_CLASS_HIGH
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/leader
@@ -192,7 +195,7 @@
 
 /datum/job/soldier/blue_soldier/scout
 	title = "Blue Scavenger"
-	total_positions = -1
+	total_positions = 0
 	outfit_type = /decl/hierarchy/outfit/job/bluesoldier/scout
 	child_role = TRUE
 	can_be_in_squad = FALSE
