@@ -82,7 +82,7 @@
 	if(laser)
 		damage_amt += burn
 		cur_damage += burn_dam
-	if(internal_organs && internal_organs.len && (cur_damage + damage_amt >= max_damage || (((sharp && damage_amt >= 5) || damage_amt >= 10) && prob(5))))
+	if(internal_organs && internal_organs.len && (cur_damage + damage_amt >= max_damage || (((sharp && damage_amt >= 5) || damage_amt >= 10) && prob(20))))
 		// Damage an internal organ
 		var/list/victims = list()
 		for(var/obj/item/organ/internal/I in internal_organs)
@@ -102,8 +102,9 @@
 		if(can_feel_pain() && prob(45))
 			owner.emote("scream")	//getting hit on broken hand hurts
 
-	//If they aren't getting hit with a blunt object it shouldn't break their bones. If it's sharp enough to cut it off then it'll cut of it off, otherwise knives will shatter chests.
-	if(brute_dam > min_broken_damage && blunt)//prob(brute_dam + brute * (1+blunt)) ) //blunt damage is gud at fracturing
+	//If they aren't getting hit with a blunt object it shouldn't break their bones. If it's sharp enough to cut it off then it'll cut of it off, otherwise knives will shatter chests. 2021, Torner (Ravein) - Hello!
+//	if(brute_dam > min_broken_damage && blunt)//prob(brute_dam + brute * (1+blunt)) ) //blunt damage is gud at fracturing
+	if(brute_dam + brute > min_broken_damage && prob(brute_dam + brute * (1+blunt)) )
 		fracture()
 
 	// If the limbs can break, make sure we don't exceed the maximum damage a limb can take before breaking

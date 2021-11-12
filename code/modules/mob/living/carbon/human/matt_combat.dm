@@ -2,7 +2,7 @@
 /mob/living/carbon/human/proc/handle_combat_mode()//Makes it so that you can't regain stamina in combat mode.
 	if(combat_mode)
 		if(staminaloss < (staminaexhaust/2))
-			adjustStaminaLoss(2)
+			adjustStaminaLoss(1)
 
 /mob/living/carbon/human/proc/attempt_dodge()//Handle parry is an object proc and it's, its own thing.
 	var/dodge_modifier = 0
@@ -16,9 +16,9 @@
 			do_dodge()
 			return	1
 
-		//else if(CRIT_FAILURE)
-		//	visible_message("<b><big>[src.name] fails to dodge and falls on the floor!</big></b>")
-		//	Weaken(3)
+//		else if(CRIT_FAILURE)
+//			visible_message("<b><big>[src.name] fails to dodge and falls on the floor!</big></b>")
+//			Weaken(1)
 
 
 /mob/living/proc/do_dodge()

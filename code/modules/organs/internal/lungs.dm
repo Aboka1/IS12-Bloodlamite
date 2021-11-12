@@ -8,7 +8,7 @@
 	min_bruised_damage = 20
 	min_broken_damage = 40
 	max_damage = 65
-	relative_size = 60
+	relative_size = 75
 
 	var/active_breathing = 1
 
@@ -70,11 +70,11 @@
 		return
 
 	if (germ_level > INFECTION_LEVEL_ONE && active_breathing)
-		if(prob(5))
+		if(prob(15))
 			owner.emote("cough")		//respitory tract infection
 
 	if(is_bruised() && !owner.is_asystole())
-		if(prob(2))
+		if(prob(5))
 			if(active_breathing)
 				owner.visible_message(
 					"<B>\The [owner]</B> coughs up blood!",
@@ -88,7 +88,8 @@
 				)
 
 			owner.drip(10)
-		if(prob(15))
+			owner.emote("cough")
+		if(prob(50))
 			if(active_breathing)
 				owner.visible_message(
 					"<B>\The [owner]</B> gasps for air!",
@@ -99,6 +100,8 @@
 				to_chat(owner, "<span class='danger'>You're having trouble getting enough [breath_type]!</span>")
 
 			owner.losebreath = max(round(damage / 2), owner.losebreath)
+			owner.adjustBrainLoss(25)
+			owner.emote("gasp")
 
 /obj/item/organ/internal/lungs/proc/rupture()
 	var/obj/item/organ/external/parent = owner.get_organ(parent_organ)
@@ -149,7 +152,7 @@
 	var/inhale_efficiency = min(round(inhale_pp/safe_pressure_min, 0.001), 3)
 	// Not enough to breathe
 	if(inhale_efficiency < 1)
-		if(prob(20) && active_breathing)
+		if(prob(25) && active_breathing)
 			owner.emote("gasp")
 
 		breath_fail_ratio = 1 - inhale_efficiency
@@ -247,7 +250,7 @@
 	return failed_breath
 
 /obj/item/organ/internal/lungs/proc/handle_failed_breath()
-	if(prob(15) && !owner.nervous_system_failure())
+	if(prob(20) && !owner.nervous_system_failure())
 		if(!owner.is_asystole())
 			if(active_breathing)
 				owner.emote("gasp")

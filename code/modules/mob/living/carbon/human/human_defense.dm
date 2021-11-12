@@ -33,7 +33,7 @@ meteor_act
 	var/penetrating_damage = ((P.damage + P.armor_penetration) * P.penetration_modifier) - armor
 
 	//Organ damage
-	if(organ.internal_organs.len && prob(35 + max(penetrating_damage, -12.5)))
+	if(organ.internal_organs.len && prob(40 + max(penetrating_damage, -12.5)))
 		var/damage_amt = min((P.damage * P.penetration_modifier), penetrating_damage) //So we don't factor in armor_penetration as additional damage
 		if(damage_amt > 0)
 		// Damage an internal organ
@@ -305,12 +305,11 @@ meteor_act
 		attack_bloody(I, user, effective_force, hit_zone)
 
 	//This was commented out because critical successes are OP as shit. Now they're back.
-	/*
+
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.statscheck(skills = H.SKILL_LEVEL(melee)) == CRIT_SUCCESS)
 			resolve_critical_hit()
-	*/ //And now it's commented out again.
 
 	if(hit_zone == BP_R_HAND || hit_zone == BP_L_HAND)
 		var/list/holding= list(src.get_active_hand(), src.get_inactive_hand())
@@ -655,7 +654,7 @@ meteor_act
 				to_chat(user, too_high_message)
 				return
 
-	var/kickdam = rand(2,7)
+	var/kickdam = rand(3,8)
 	kickdam *= strToDamageModifier(user.my_stats[STAT(str)].level)
 	user.adjustStaminaLoss(rand(10,15))//Kicking someone is a big deal.
 	if(kickdam)
@@ -699,12 +698,12 @@ meteor_act
 	return
 
 /mob/living/proc/resolve_critical_hit()
-	var/result = rand(1,3)
+	var/result = rand(1,4)
 
 	switch(result)
 		if(1)
 			visible_message("<span class='danger'><big>CRITICAL HIT! IT MUST BE PAINFUL</big></span>")
-			apply_damage(rand(5,10), BRUTE)
+			apply_damage(rand(8,14), BRUTE)
 			return
 
 		if(2)
@@ -716,6 +715,11 @@ meteor_act
 		if(3)
 			visible_message("<span class='danger'><big>CRITICAL HIT! [src] is knocked unconcious by the blow!</big></span>")
 			apply_effect(10, PARALYZE)
+			return
+
+		if(4)
+			visible_message("<span class='danger'><big>CRITICAL HIT! [src] is flies off!</big></span>")
+			throw_at(get_edge_target_turf(src,pick(GLOB.alldirs)),1,2)
 			return
 
 //Add screaming here.

@@ -12,6 +12,8 @@
 	light_range = 2
 	light_color = "#E38F46"
 	penetration_modifier = 15
+	stun = 1
+	agony = 3
 	var/mob_passthrough_check = 0
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
 
@@ -233,7 +235,7 @@
 	pellets = 8
 	range_step = 1
 	spread_step = 10
-	range = 7
+	range = 15
 
 /* "Rifle" rounds */
 
@@ -256,13 +258,11 @@
 	weaken = 3
 	armor_penetration = 80
 	//hitscan = 1 //so the PTR isn't useless as a sniper weapon
-	penetration_modifier = 1.25
 	penetrating = 1
 
 /obj/item/projectile/bullet/rifle/a145/apds
 	damage = 75
 	armor_penetration = 95
-	penetration_modifier = 1.5
 
 /* Miscellaneous */
 

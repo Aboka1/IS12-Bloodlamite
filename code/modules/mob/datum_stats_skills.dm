@@ -32,19 +32,19 @@
 //Stats
 /datum/stat/str
 	name = "Strength"
-	shorthand = "ST"
+	shorthand = "STR"
 
 /datum/stat/dex
 	name = "Dexterity"
-	shorthand = "DX"
+	shorthand = "DEX"
 
 /datum/stat/end
 	name = "Endurance"
-	shorthand = "ED"
+	shorthand = "END"
 
 /datum/stat/int
 	name = "Intelligence"
-	shorthand = "IT"
+	shorthand = "IQ"
 
 
 //Skills these can probably go in their own file
@@ -262,6 +262,7 @@
 			return CRIT_SUCCESS
 		else
 			return SUCCESS
+
 	else
 		if(dice >= sum + crit || dice >= 17)
 			return CRIT_FAILURE

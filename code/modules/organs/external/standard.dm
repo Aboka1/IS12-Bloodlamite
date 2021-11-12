@@ -49,7 +49,6 @@
 	amputation_point = "lumbar"
 	joint = "hip"
 	dislocated = -1
-	cannot_amputate = TRUE
 	gendered_icon = 1
 	artery_name = "iliac artery"
 	cavity_name = "abdominal"
@@ -261,23 +260,11 @@
 	encased = "spine"
 	artery_name = "external carotid artery"
 	cavity_name = "oral"
-	arterial_bleed_severity = 5
-//	cannot_amputate = 1
-/*
+	arterial_bleed_severity = 6
+	cannot_amputate = 1
+	gibbable = FALSE
+
 /obj/item/organ/external/neck/fracture()
 	..()
-	for(var/obj/item/organ/internal/brain/B in src)
-		B.take_damage(110)
-
-/obj/item/organ/external/neck/removed()
-	if(owner)
-		SetName("[owner.real_name]'s head")
-		owner.drop_from_inventory(owner.glasses)
-		owner.drop_from_inventory(owner.head)
-		owner.drop_from_inventory(owner.l_ear)
-		owner.drop_from_inventory(owner.r_ear)
-		owner.drop_from_inventory(owner.wear_mask)
-		spawn(1)
-			owner.update_hair()
-	..()
-*/
+	var/obj/item/organ/internal/brain/B = owner.internal_organs_by_name[BP_BRAIN]
+	B.take_damage(100)

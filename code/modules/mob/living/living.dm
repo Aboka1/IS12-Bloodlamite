@@ -129,10 +129,10 @@ default behaviour is:
 						src.visible_message("<span class='danger'>[pusher] fails to push past [pushee].</span>")
 						now_pushing = 0
 						return
-					//if(prob(40) && !(FAT in src.mutations))
-					//	to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
-					//	now_pushing = 0
-					//	return
+					if(prob(40) && !(FAT in src.mutations))
+						to_chat(src, "<span class='danger'>You fail to push [tmob]'s fat ass out of the way.</span>")
+						now_pushing = 0
+						return
 				if(tmob.r_hand && istype(tmob.r_hand, /obj/item/shield/riot))
 					if(prob(99))
 						now_pushing = 0
@@ -673,7 +673,7 @@ default behaviour is:
 		if(lying)
 			speed += -10
 		else
-			speed += -5
+			speed += -7
 
 		adjustStaminaLoss(speed)
 
@@ -682,7 +682,7 @@ default behaviour is:
 		return
 
 /mob/living/proc/Exhaust()//Called when you run out of stamina.
-	Weaken(5)
+	Weaken(3)
 
 
 /mob/living/verb/resist()

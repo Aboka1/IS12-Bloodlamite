@@ -12,14 +12,14 @@
 	throw_range = 5
 	origin_tech = list(TECH_BIO = 3)
 	attack_verb = list("attacked", "slapped", "whacked")
-	relative_size = 60
+	relative_size = 80
 	max_damage = 100
 
 	var/can_use_mmi = TRUE
 	var/mob/living/carbon/brain/brainmob = null
 	var/const/damage_threshold_count = 10
 	var/damage_threshold_value
-	var/healed_threshold = 1
+	var/healed_threshold = 0.5
 	var/fake_brain = FALSE
 
 /obj/item/organ/internal/brain/robotize()
@@ -151,7 +151,7 @@
 			healed_threshold = 0
 
 		if(damage < (max_damage / 4))
-			healed_threshold = 1
+			healed_threshold = 0.5
 
 		if(owner.paralysis < 1) // Skip it if we're already down.
 
@@ -171,21 +171,29 @@
 			else if((owner.disabilities & NERVOUS) && prob(10))
 				owner.stuttering = max(10, owner.stuttering)
 
-			if(owner.stat == CONSCIOUS)
-				if(damage > 0 && prob(1))
+			if(owner.stat == CONSCIOUS || owner.stat == UNCONSCIOUS)
+				if(damage > 0 && prob(5))
 					owner.custom_pain("My head feels numb and painful.",10)
-				if(is_bruised() && prob(1) && owner.eye_blurry <= 0)
+					if(prob(35))
+						owner.emote("gasp")
+					owner.losebreath += 15
+				if(is_bruised() && prob(25) && owner.eye_blurry <= 0)
 					to_chat(owner, "<span class='warning'>It becomes hard to see for some reason.</span>")
-					owner.eye_blurry = 10
+					owner.Stun(5)
+					owner.losebreath += 20
+					if(prob(60))
+						owner.emote("gasp")
+					owner.make_jittery(50)
 				if(is_broken() && prob(1) && owner.get_active_hand())
 					to_chat(owner, "<span class='danger'>My hand won't respond properly, and I dropped what I was holding!!</span>")
 					owner.drop_item()
 				if((damage >= (max_damage * 0.50)))
-					if(!owner.lying)
-						to_chat(owner, "<span class='danger'>I'm almost dead.</span>")
+					to_chat(owner, "<span class='danger'>I'm... Dead?</span>")
 					owner.Paralyse(10)
-					owner.adjustOxyLoss(rand(15,20))
-					owner.make_jittery(400)
+					owner.losebreath += 25
+					if(prob(90))
+						owner.emote("gasp")
+					owner.make_jittery(100)
 
 		// Brain damage from low oxygenation or lack of blood.
 		if(owner.should_have_organ(BP_HEART))

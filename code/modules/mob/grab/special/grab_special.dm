@@ -67,7 +67,7 @@
 
 /datum/grab/special/wrench/attack_self_act(var/obj/item/grab/G)
 	do_wrench(G)
-	G.assailant.setClickCooldown(DEFAULT_SLOW_COOLDOWN)
+	G.assailant.setClickCooldown(3)
 
 /datum/grab/special/wrench/proc/do_wrench(var/obj/item/grab/G)
 	var/obj/item/organ/external/O = G.get_targeted_organ()
@@ -93,9 +93,9 @@
 
 	if(!O.is_broken()) // The limb is broken and we're grabbing it in both hands.
 		assailant.visible_message("<span class='danger'>[assailant] tries to break [affecting]'s [O.name]!</span>")
-		var/break_chance = (assailant.STAT_LEVEL(str)*10) - 105 // We have to have a strength over 12 to really have a chance of breaking a limb.
+		var/break_chance = (assailant.STAT_LEVEL(str)*9) - 105 // We have to have a strength over 12 to really have a chance of breaking a limb.
 		if(break_chance <= 0)
-			break_chance = 10
+			break_chance = 15
 		if(prob(break_chance))
 			O.fracture()
 

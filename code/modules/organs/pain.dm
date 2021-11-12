@@ -32,7 +32,9 @@ mob/var/next_pain_time = 0
 					if(has_quirk(/datum/quirk/tough))
 						return 0
 					flash_weakest_pain()
-					if(prob(50))
+					if(prob(20))
+						emote("bigpain")
+					if(prob(75))
 						agony_moan()
 				if(50 to 90)
 					if(has_quirk(/datum/quirk/tough))
@@ -41,8 +43,10 @@ mob/var/next_pain_time = 0
 					flash_weak_pain()
 					if(stuttering < 10)
 						stuttering += 5
-					if(prob(80))
+					if(prob(20))
 						agony_moan()
+					if(prob(75))
+						emote("bigpain")
 				if(90 to INFINITY)
 					if(has_quirk(/datum/quirk/tough))
 						if(prob(50))

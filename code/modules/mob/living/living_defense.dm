@@ -245,7 +245,7 @@
 	var/smashsound = pick("sound/effects/gore/smash[rand(1,3)].ogg", "sound/effects/gore/trauma1.ogg")
 	playsound(loc, smashsound, 50, 1, -1)
 	//playsound(loc, 'sound/effects/bangtaper.ogg', 50, 1, -1)
-	src.take_organ_damage(speed*5)
+	src.take_organ_damage(speed*8)
 	T.add_blood(src)
 
 /mob/living/proc/near_wall(var/direction,var/distance=1)

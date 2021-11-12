@@ -21,8 +21,13 @@
 
 	if(losebreath>0) //Suffocating so do not take a breath
 		losebreath--
-		if (prob(25)) //Gasp per 10 ticks? Sounds about right.
-			spawn emote("gasp")
+
+		if (prob(60))
+			emote("gasp")
+			src.adjustBrainLoss(25)
+		if (prob(25))
+			emote("cough")
+			src.adjustBrainLoss(20)
 	else
 		//Okay, we can breathe, now check if we can get air
 		var/volume_needed = get_breath_volume()
